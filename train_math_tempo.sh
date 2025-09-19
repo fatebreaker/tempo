@@ -8,7 +8,7 @@ export HYDRA_FULL_ERROR=1
 export ACCELERATE_LOG_LEVEL=info
 
 PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
-    algorithm.adv_estimator=tspo \
+    algorithm.adv_estimator=tempo \
     data.train_files=data/math/train_2.parquet \
     data.val_files=data/math/test_2.parquet \
     data.max_prompt_length=1024 \
@@ -41,7 +41,7 @@ PYTHONUNBUFFERED=1 python3 -m verl.trainer.main_ppo \
     trainer.nnodes=1 \
     trainer.logger=['console','wandb'] \
     trainer.project_name=Qwen3-1.7B-Math \
-    trainer.experiment_name=tspo_7 \
+    trainer.experiment_name=tempo_7 \
     trainer.save_freq=-1 \
     trainer.test_freq=100 \
     actor_rollout_ref.actor.clip_ratio_low=0.2 \

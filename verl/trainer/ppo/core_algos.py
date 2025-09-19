@@ -112,7 +112,7 @@ class AdvantageEstimator(str, Enum):
     OPO = "opo"
     GRPO_PASSK = "grpo_passk"
     GRPO = "grpo"
-    TIDEPO = "tidepo"
+    TEMPO = "tempo"
     HEPO = "hepo"
 
 
@@ -258,8 +258,8 @@ def compute_grpo_outcome_advantage(
     return scores, scores
 
 
-@register_adv_est(AdvantageEstimator.TIDEPO)
-def compute_tidepo_outcome_advantage(
+@register_adv_est(AdvantageEstimator.TEMPO)
+def compute_tempo_outcome_advantage(
     token_level_rewards: torch.Tensor,
     responses: torch.Tensor,
     response_mask: torch.Tensor,
