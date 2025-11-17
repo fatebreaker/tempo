@@ -269,7 +269,7 @@ def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, num_re
             # Get length from the initial response mask
             response_length = tempo_calculation_mask.size(1)
             # This mask is the one intended for GRPO
-            gapo_calculation_mask = data.batch["loss_mask"][:, -response_length:]
+            tempo_calculation_mask = data.batch["loss_mask"][:, -response_length:]
         # Call compute_grpo_outcome_advantage with parameters matching its definition
         advantages, returns = core_algos.compute_tempo_outcome_advantage(
             token_level_rewards=data.batch["token_level_rewards"],
